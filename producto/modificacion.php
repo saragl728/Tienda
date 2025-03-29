@@ -7,14 +7,14 @@
   $params = json_decode($json);
   
   require("../conexion.php");
+  require("../comun.php");
   $con=retornarConexion();
   
+  $noombre = limpiaEstring($params->nombre);
+  $precioo = redondear($params->precio);
 
-  mysqli_query($con,"update producto set nombre='$params->nombre',
-                                          precio=$params->precio
-                                          where Id=$params->Id");
-    
-  
+  mysqli_query($con,"update producto set nombre='$noombre', precio=$precioo where Id=$params->Id");
+     
   class Result {}
 
   $response = new Result();

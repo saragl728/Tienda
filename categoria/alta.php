@@ -7,13 +7,13 @@
   $params = json_decode($json);
   
   require("../conexion.php");
+  require("../comun.php");
   $con=retornarConexion();
-  
 
-  mysqli_query($con,"insert into categoria(nombre) values
-                  ('$params->nombre')");
+  $noombre = limpiaEstring($params->$nombre);
+
+  mysqli_query($con,"insert into categoria(nombre) values ('$noombre')");
     
-  
   class Result {}
 
   $response = new Result();

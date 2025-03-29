@@ -7,12 +7,12 @@ $json = file_get_contents('php://input');
 $params = json_decode($json);
 
 require("../conexion.php");
+require("../comun.php");
 $con = retornarConexion();
 
+$noombre = limpiaEstring($params->nombre);
 
-mysqli_query($con, "update categoria set nombre='$params->nombre'
-           where Id=$params->Id");
-
+mysqli_query($con, "update categoria set nombre='$noombre' where Id=$params->Id");
 
 class Result
 {

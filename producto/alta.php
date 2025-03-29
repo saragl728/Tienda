@@ -7,13 +7,14 @@
   $params = json_decode($json);
   
   require("../conexion.php");
+  require("../comun.php");
   $con=retornarConexion();
   
+  $noombre = limpiaEstring($params->nombre);
+  $precioo = redondear($params->precio);
 
-  mysqli_query($con,"insert into producto(nombre,precio) values
-                  ('$params->nombre',$params->precio)");
+  mysqli_query($con,"insert into producto(nombre,precio) values ('$noombre',$precioo)");
     
-  
   class Result {}
 
   $response = new Result();

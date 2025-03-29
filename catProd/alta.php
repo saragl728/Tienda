@@ -8,12 +8,9 @@
   
   require("../conexion.php");
   $con=retornarConexion();
-  
 
-  mysqli_query($con,"insert into productoCategoria(IdProd,IdCat) values
-                  ('$params->IdProd',$params->IdCat)");
-    
-  
+  mysqli_query($con,"insert into productoCategoria(IdProd,IdCat) values ('$params->IdProd',$params->IdCat)");
+     
   class Result {}
 
   $response = new Result();
