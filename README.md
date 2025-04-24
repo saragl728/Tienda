@@ -1,0 +1,1 @@
+Este es el código Php que es el complemento para [SimulacionTienda](https://github.com/saragl728/SimulacionTienda).
