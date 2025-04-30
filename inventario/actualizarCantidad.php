@@ -7,12 +7,10 @@
   $params = json_decode($json);
   
   require("../conexion.php");
-  require("../comun.php");
   $con=retornarConexion();
-  
-  //la fecha de transacción es current_date
-  mysqli_query($con,"insert into carrito(IdCompra, IdProducto, cantidad) values ($params->IdCompra, $params->IdProducto, $params->cantidad)");
-    
+
+  mysqli_query($con,"update personaTieneObjeto SET cantidad=$params->cantidad WHERE IdPersona=$params->IdPersona AND IdProducto=$params->IdProducto");
+     
   class Result {}
 
   $response = new Result();
