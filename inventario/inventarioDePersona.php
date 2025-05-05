@@ -1,17 +1,16 @@
 <?php
-header('Access-Control-Allow-Origin: *');
-header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+  require("../header.php");
 
-require("../conexion.php");
-$con = retornarConexion();
+  require("../conexion.php");
+  $con = retornarConexion();
 
-$registros = mysqli_query($con, "SELECT producto.nombre AS 'producto', personaTieneObjeto.cantidad AS 'cantidad' FROM personaTieneObjeto JOIN producto ON personaTieneObjeto.IdProducto = producto.Id WHERE personaTieneObjeto.IdUsuario = $_GET[IdPer]");
-$vec = [];
-while ($reg = mysqli_fetch_array($registros)) {
-  $vec[] = $reg;
-}
+  $registros = mysqli_query($con, "SELECT producto.nombre AS 'producto', personaTieneObjeto.cantidad AS 'cantidad' FROM personaTieneObjeto JOIN producto ON personaTieneObjeto.IdProducto = producto.Id WHERE personaTieneObjeto.IdUsuario = $_GET[IdPer]");
+  $vec = [];
+  while ($reg = mysqli_fetch_array($registros)) {
+    $vec[] = $reg;
+  }
 
-$cad = json_encode($vec);
-echo $cad;
-header('Content-Type: application/json');
+  $cad = json_encode($vec);
+  echo $cad;
+  header('Content-Type: application/json');
 ?>
