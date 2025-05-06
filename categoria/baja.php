@@ -4,8 +4,8 @@
   require("../conexion.php");
   $con=retornarConexion();
   
-  mysqli_query($con,"delete from categoria where Id=$_GET[Id]");
-    
+  mysqli_query($con, "delete from productoCategoria where IdCat=$_GET[Id]");
+  mysqli_query($con,"delete from categoria where Id=$_GET[Id]");  
   
   class Result {}
 

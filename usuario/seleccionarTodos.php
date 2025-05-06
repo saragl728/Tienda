@@ -6,7 +6,8 @@
 
   $registros=mysqli_query($con,"select Id, nombre, correo, fechaNac, saldo, contrasenya, adminis from usuario");
     
-  if ($reg=mysqli_fetch_array($registros))  
+  $vec=[];  
+  while ($reg=mysqli_fetch_array($registros))  
   {
     $vec[]=$reg;
   }
