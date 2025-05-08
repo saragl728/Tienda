@@ -8,7 +8,7 @@
   require("../conexion.php");
   $con=retornarConexion();
 
-  mysqli_query($con,"update personaTieneObjeto SET cantidad=$params->cantidad WHERE IdPersona=$params->IdPersona AND IdProducto=$params->IdProducto");
+  mysqli_query($con,"update personaTieneObjeto SET cantidad=$params->cantidad WHERE IdUsuario=$params->IdUsuario AND IdProducto=$params->IdProducto");
      
   class Result {}
 
