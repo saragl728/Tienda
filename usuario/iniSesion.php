@@ -22,11 +22,12 @@
 
     //si la contraseña falla, fin del código
      if (!password_verify($passwd, $res["contrasenya"])){
-        exit("Contraseña incorrecta");
+        $response = null;
+        echo json_encode($response);
+        exit($response);
     } 
 
-    class Usuario{
-    }
+    class Usuario{ }
     $response = new Usuario();
     $response->Id = $res["Id"];
     $response->nombre = $res["nombre"];
