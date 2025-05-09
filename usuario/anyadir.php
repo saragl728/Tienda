@@ -15,7 +15,9 @@
     $passwd = password_hash($params->contrasenya, PASSWORD_DEFAULT);
 
     //no tengo que poner el rol o el saldo porque tienen valores por defecto
-    mysqli_query($con,"insert into usuario(nombre,correo,fechaNac,contrasenya) values ('$noombre','$correoo', '$fechaNaac', '$passwd')");
+    $sent = mysqli_prepare($con, "INSERT INTO usuario(nombre,correo,fechaNac,contrasenya) values(?,?,?,?)");
+    $sent->bind_param("ssss", $noombre, $correoo, $fechaNaac, $passwd);
+    $sent->execute();
 
     class Result
     {

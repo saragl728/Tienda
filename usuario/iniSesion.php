@@ -10,9 +10,12 @@
     $con = retornarConexion();
 
     $noombre = limpiaEstring($params->nombre);
-    $passwd = $params->contrasenya;
+    $passwd = limpiaEstring($params->contrasenya);
 
-    $aux = mysqli_query($con,"select Id, nombre, correo, fechaNac, saldo, contrasenya, adminis from usuario where nombre='$noombre'");
+    $sent = mysqli_prepare($con, "select Id, nombre, correo, fechaNac, saldo, contrasenya, adminis from usuario where nombre=?");
+    $sent->bind_param("s", $noombre);
+    $sent->execute();
+    $aux = $sent->get_result();
 
     $resa = mysqli_fetch_assoc($aux);
     $res = $resa;

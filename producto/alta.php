@@ -12,7 +12,9 @@
   $noombre = limpiaEstring($params->nombre);
   $precioo = redondear($params->precio);
 
-  mysqli_query($con,"insert into producto(nombre,precio) values ('$noombre',$precioo)");
+  $sent = mysqli_prepare($con, "insert into producto(nombre,precio) values(?,?)");
+  $sent->bind_param("sd", $noombre, $precioo);
+  $sent->execute();
     
   class Result {}
 

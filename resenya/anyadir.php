@@ -10,9 +10,11 @@
   $con=retornarConexion();
 
   $texto = limpiaEstring($params->contenido);
-
-  mysqli_query($con,"insert into resenya(IdProducto,IdCliente,contenido) values ($params->IdProducto,$params->IdCliente,'$texto')");
      
+  $sent = mysqli_prepare($con, "insert into resenya(IdProducto,IdCliente,contenido) values (?,?,?)");
+  $sent->bind_param("iis", $params->IdProducto, $params->IdCliente, $texto);
+  $sent->execute();
+
   class Result {}
 
   $response = new Result();

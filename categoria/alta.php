@@ -9,9 +9,11 @@
   require("../comun.php");
   $con=retornarConexion();
 
-  $noombre = limpiaEstring($params->$nombre);
+  $noombre = limpiaEstring($params->nombre);
 
-  mysqli_query($con,"insert into categoria(nombre) values ('$noombre')");
+  $sent = mysqli_prepare($con, "insert into categoria(nombre) values(?)");
+  $sent->bind_param("s", $noombre);
+  $sent->execute();
     
   class Result {}
 

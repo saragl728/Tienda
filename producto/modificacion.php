@@ -12,7 +12,9 @@
   $noombre = limpiaEstring($params->nombre);
   $precioo = redondear($params->precio);
 
-  mysqli_query($con,"update producto set nombre='$noombre', precio=$precioo where Id=$params->Id");
+  $sent = mysqli_prepare($con, "update producto set nombre=?, precio=? WHERE Id=?");
+  $sent->bind_param("sdi", $noombre, $precioo, $params->Id);
+  $sent->execute();
      
   class Result {}
 

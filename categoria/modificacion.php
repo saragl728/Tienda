@@ -11,7 +11,9 @@ $con = retornarConexion();
 
 $noombre = limpiaEstring($params->nombre);
 
-mysqli_query($con, "update categoria set nombre='$noombre' where Id=$params->Id");
+$sent = mysqli_prepare($con, "update categoria set nombre=? WHERE Id=?");
+$sent->bind_param("si", $noombre, $params->Id);
+$sent->execute();
 
 class Result
 {
