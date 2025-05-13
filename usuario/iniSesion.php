@@ -1,10 +1,6 @@
 <?php
     require("../header.php");
-
-    $json = file_get_contents('php://input');
-
-    $params = json_decode($json);
-
+    require("../introPost.php");
     require("../conexion.php");
     require("../comun.php");
     $con = retornarConexion();
