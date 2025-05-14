@@ -1,7 +1,7 @@
 <?php 
-  require("../header.php");
-  require("../introPost.php");
-  require("../conexion.php");
+  require "../req/header.php";
+  require "../req/introPost.php";
+  require "../req/conexion.php";
   $con=retornarConexion();
 
   mysqli_query($con,"update personaTieneObjeto SET cantidad=$params->cantidad WHERE IdUsuario=$params->IdUsuario AND IdProducto=$params->IdProducto");

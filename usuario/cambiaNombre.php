@@ -1,8 +1,8 @@
 <?php 
-  require("../header.php");
-  require("../introPost.php");
-  require("../conexion.php");
-  require("../comun.php");
+  require "../req/header.php";
+  require "../req/introPost.php";
+  require "../req/conexion.php";
+  require "../req/comun.php";
   $con=retornarConexion();
   
   $noombre = limpiaEstring($params->nombre);

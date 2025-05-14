@@ -1,7 +1,6 @@
 <?php 
-  require("../header.php");
-  
-  require("../conexion.php");
+require "../req/header.php";
+require "../req/conexion.php";
   $con=retornarConexion();
   
   //hay que hacer varias consultas

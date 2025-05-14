@@ -1,7 +1,6 @@
 <?php 
-  require("../header.php");
-  
-  require("../conexion.php");
+  require "../req/header.php";
+  require "../req/conexion.php";
   $con=retornarConexion();
   
   mysqli_query($con, "delete from productoCategoria where IdCat=$_GET[Id]");
