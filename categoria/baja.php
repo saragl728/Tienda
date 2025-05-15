@@ -6,9 +6,7 @@
   mysqli_query($con, "delete from productoCategoria where IdCat=$_GET[Id]");
   mysqli_query($con,"delete from categoria where Id=$_GET[Id]");  
   
-  class Result {}
-
-  $response = new Result();
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'articulo borrado';
 

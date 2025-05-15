@@ -15,11 +15,7 @@
     $sent->bind_param("ssss", $noombre, $correoo, $fechaNaac, $passwd);
     $sent->execute();
 
-    class Result
-    {
-    }
-
-    $response = new Result();
+    require "../req/result.php";
     $response->resultado = 'OK';
     $response->mensaje = 'datos grabados';
 

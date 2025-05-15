@@ -6,10 +6,8 @@
   $con=retornarConexion();
   
   mysqli_query($con,"update usuario set adminis='$params->adminis' where Id=$params->Id");
-     
-  class Result {}
-
-  $response = new Result();
+  
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'datos modificados';
 

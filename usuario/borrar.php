@@ -10,11 +10,7 @@
     mysqli_query($con, "update resenya SET IdCliente = 0 where IdCliente=$_GET[Id]");
     mysqli_query($con, "delete from usuario where Id=$_GET[Id]");
 
-    class Result
-    {
-    }
-
-    $response = new Result();
+    require "../req/result.php";
     $response->resultado = 'OK';
     $response->mensaje = 'usuario borrado';
 

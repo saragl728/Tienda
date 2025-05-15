@@ -7,9 +7,7 @@
   
   mysqli_query($con,"insert into compra(IdCliente) values ($params->IdCliente)");
     
-  class Result {}
-
-  $response = new Result();
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'datos grabados';
 

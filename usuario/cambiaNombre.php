@@ -10,10 +10,8 @@
   $sent = mysqli_prepare($con, "update usuario set nombre=? where Id=?");
   $sent->bind_param("si", $noombre, $params->Id);
   $sent->execute();
-     
-  class Result {}
-
-  $response = new Result();
+  
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'datos modificados';
 

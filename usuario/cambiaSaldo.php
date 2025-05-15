@@ -5,10 +5,8 @@
   $con=retornarConexion();
   
   mysqli_query($con,"update usuario set saldo=$params->saldo where Id=$params->Id");
-     
-  class Result {}
-
-  $response = new Result();
+  
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'saldo actualizado';
 

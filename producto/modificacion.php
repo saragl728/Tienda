@@ -11,10 +11,8 @@
   $sent = mysqli_prepare($con, "update producto set nombre=?, precio=? WHERE Id=?");
   $sent->bind_param("sdi", $noombre, $precioo, $params->Id);
   $sent->execute();
-     
-  class Result {}
-
-  $response = new Result();
+  
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'datos modificados';
 

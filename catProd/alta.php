@@ -5,10 +5,8 @@
   $con=retornarConexion();
 
   mysqli_query($con,"insert into productoCategoria(IdProd,IdCat) values ($params->IdProd,$params->IdCat)");
-     
-  class Result {}
-
-  $response = new Result();
+  
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'datos grabados';
 

@@ -8,10 +8,8 @@
   $passwd = password_hash($params->contrasenya, PASSWORD_DEFAULT);
 
   mysqli_query($con,"update usuario set contrasenya='$passwd' where Id=$params->Id");
-     
-  class Result {}
-
-  $response = new Result();
+  
+  require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'datos modificados';
 
