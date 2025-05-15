@@ -12,6 +12,5 @@
   $response->resultado = 'OK';
   $response->mensaje = 'saldo actualizado';
 
-  header('Content-Type: application/json');
-  echo json_encode($response);  
+  require "../req/piePost.php";
 ?>

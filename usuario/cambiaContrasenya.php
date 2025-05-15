@@ -15,6 +15,5 @@
   $response->resultado = 'OK';
   $response->mensaje = 'datos modificados';
 
-  header('Content-Type: application/json');
-  echo json_encode($response);  
+  require "../req/piePost.php";
 ?>

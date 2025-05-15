@@ -18,6 +18,5 @@
   $response->resultado = 'OK';
   $response->mensaje = 'datos grabados';
 
-  header('Content-Type: application/json');
-  echo json_encode($response);  
+  require "../req/piePost.php";
 ?>

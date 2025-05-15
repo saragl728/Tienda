@@ -12,6 +12,5 @@
   $response->resultado = 'OK';
   $response->mensaje = 'articulo borrado';
 
-  header('Content-Type: application/json');
-  echo json_encode($response);  
+  require "../req/piePost.php";
 ?>
