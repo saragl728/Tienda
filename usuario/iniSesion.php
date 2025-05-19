@@ -5,8 +5,8 @@
   require "../req/comun.php";
   $con = retornarConexion();
 
-  $noombre = limpiaEstring($params->nombre);
-  $passwd = limpiaEstring($params->contrasenya);
+  $noombre = limpiaEstring($params->nombre, 50);
+  $passwd = limpiaEstring($params->contrasenya, 200);
 
   $sent = mysqli_prepare($con, "select Id, nombre, correo, fechaNac, saldo, contrasenya, adminis from usuario where nombre=?");
   $sent->bind_param("s", $noombre);
