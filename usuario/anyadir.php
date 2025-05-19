@@ -6,7 +6,7 @@
     $con = retornarConexion();
 
     $noombre = limpiaEstring($params->nombre);
-    $correoo = limpiaEstring($params->correo);
+    $correoo = limpiaCorreo($params->correo);
     $fechaNaac = $params->fechaNac;
     $passwd = password_hash($params->contrasenya, PASSWORD_DEFAULT);
 
@@ -18,6 +18,5 @@
     require "../req/result.php";
     $response->resultado = 'OK';
     $response->mensaje = 'datos grabados';
-
     require "../req/piePost.php";
 ?>
