@@ -5,7 +5,7 @@
   require "../req/comun.php";
   $con=retornarConexion();
   
-  $noombre = limpiaEstring($params->nombre);
+  $noombre = limpiaEstring($params->nombre, 50);
 
   $sent = mysqli_prepare($con, "update usuario set nombre=? where Id=?");
   $sent->bind_param("si", $noombre, $params->Id);
@@ -14,6 +14,5 @@
   require "../req/result.php";
   $response->resultado = 'OK';
   $response->mensaje = 'datos modificados';
-
   require "../req/piePost.php"; 
 ?>

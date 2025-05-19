@@ -5,7 +5,7 @@
   require "../req/comun.php";
   $con=retornarConexion();
 
-  $noombre = limpiaEstring($params->nombre);
+  $noombre = limpiaEstring($params->nombre, 20);
 
   $sent = mysqli_prepare($con, "insert into categoria(nombre) values(?)");
   $sent->bind_param("s", $noombre);

@@ -5,7 +5,7 @@
   require "../req/comun.php";
   $con=retornarConexion();
   
-  $noombre = limpiaEstring($params->nombre);
+  $noombre = limpiaEstring($params->nombre, 30);
   $precioo = redondear($params->precio);
   $id = $params->Id;
 

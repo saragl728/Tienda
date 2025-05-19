@@ -5,7 +5,7 @@
   require "../req/comun.php";
   $con = retornarConexion();
 
-  $noombre = limpiaEstring($params->nombre);
+  $noombre = limpiaEstring($params->nombre, 20);
   $id = $params->Id;
 
   //comprobación para ver si ya hay otra con el mismo nombre

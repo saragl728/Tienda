@@ -5,7 +5,7 @@
     require "../req/comun.php";
     $con = retornarConexion();
 
-    $noombre = limpiaEstring($params->nombre);
+    $noombre = limpiaEstring($params->nombre, 50);
     $correoo = limpiaCorreo($params->correo);
     $fechaNaac = $params->fechaNac;
     $passwd = password_hash($params->contrasenya, PASSWORD_DEFAULT);
