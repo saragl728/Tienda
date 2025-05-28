@@ -14,4 +14,3 @@
   $response->mensaje = 'datos modificados';
 
   require "../req/piePost.php";
-?>

@@ -16,4 +16,3 @@
   $response->mensaje = 'articulo borrado';
 
   require "../req/piePost.php";
-?>

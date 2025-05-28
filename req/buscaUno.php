@@ -6,4 +6,3 @@ if ($reg = mysqli_fetch_array($registros)) {
 $cad = json_encode($vec);
 echo $cad;
 header('Content-Type: application/json');
-?>

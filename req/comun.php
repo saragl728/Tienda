@@ -51,4 +51,3 @@ function limpiaCorreo(string $cadena): string {
 function redondear(float $numero): float{
     return round($numero, 2);
 }
-?>

@@ -5,4 +5,3 @@
 
   $registros=mysqli_query($con,"select nombre from categoria");
   require "../req/buscaVarios.php";
-?>

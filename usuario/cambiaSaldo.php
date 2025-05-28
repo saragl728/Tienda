@@ -11,4 +11,3 @@
   $response->mensaje = 'saldo actualizado';
 
   require "../req/piePost.php";
-?>

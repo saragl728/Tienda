@@ -11,4 +11,3 @@
   $response->mensaje = 'datos grabados';
 
   require "../req/piePost.php"; 
-?>

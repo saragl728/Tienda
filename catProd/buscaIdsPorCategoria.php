@@ -5,4 +5,3 @@
 
   $registros = mysqli_query($con, "SELECT IdProd, IdCat FROM categoria INNER JOIN productoCategoria ON categoria.Id = productoCategoria.IdCat WHERE categoria.nombre = '$_GET[filtro]' ORDER BY IdCat");
   require "../req/buscaVarios.php";
-?>

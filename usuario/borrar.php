@@ -15,4 +15,3 @@
     $response->mensaje = 'usuario borrado';
 
     require "../req/piePost.php";
-?>

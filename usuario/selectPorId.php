@@ -5,4 +5,3 @@
 
   $registros=mysqli_query($con,"select Id, nombre, correo, fechaNac, saldo, contrasenya, adminis from usuario where Id=$_GET[Id]");
   require "../req/buscaUno.php";
-?>

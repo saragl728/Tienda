@@ -17,12 +17,8 @@
   $res = $resa;
 
   //si la contraseña falla, fin del código
-    if (!password_verify($passwd, $res["contrasenya"])){
-      $response = null;
-      echo json_encode($response);
-      exit($response);
-  } 
-
+  if (!password_verify($passwd, $res["contrasenya"])) require "../req/fallo.php";
+      
   class Usuario{ }
   $response = new Usuario();
   $response->Id = $res["Id"];
@@ -34,4 +30,3 @@
   $response->adminis = $res["adminis"];
 
   require "../req/piePost.php";
-?>

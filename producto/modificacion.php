@@ -22,4 +22,3 @@
   $response->resultado = 'OK';
   $response->mensaje = 'datos modificados';
   require "../req/piePost.php";
-?>

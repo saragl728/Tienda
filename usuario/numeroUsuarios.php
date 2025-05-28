@@ -5,4 +5,3 @@
 
   $registros=mysqli_query($con,"select COUNT(*) AS 'cantidad' from usuario where Id <> 0");
   require "../req/buscaUno.php";
-?>
