@@ -3,5 +3,5 @@
   require "../req/conexion.php";
   $con=retornarConexion();
 
-  $registros=mysqli_query($con,"select COUNT(*) AS 'cantidad' from usuario where Id <> 0 AND adminis = 'S'");
+  $registros=mysqli_query($con,"select COUNT(*) AS 'cantidad' from usuario where adminis = 'S'");
   require "../req/buscaUno.php";
