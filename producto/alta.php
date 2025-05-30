@@ -8,6 +8,10 @@
   $noombre = limpiaEstring($params->nombre, 30);
   $precioo = redondear($params->precio);
 
+  $aent = mysqli_prepare($con, "select COUNT(*) AS 'cantidad' from producto where nombre=?");
+  $aent->bind_param("s", $noombre);
+  require "../req/hazComprobacion.php";
+
   $sent = mysqli_prepare($con, "insert into producto(nombre,precio) values(?,?)");
   $sent->bind_param("sd", $noombre, $precioo);
   $sent->execute();
